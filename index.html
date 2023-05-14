@@ -8,11 +8,10 @@
        }
     </style>
     <script type="module">
-      import { ComputeEngine } from 'https://unpkg.com/@cortex-js/compute-engine?module'
-
       function handleChange(event, field) {
         console.log(field.value)
         console.log(field.getValue("ascii-math"))
+        document.getElementById("of").setValue(field.getValue("ascii-math"))
       }
 
       window.handleChange = handleChange
@@ -22,6 +21,9 @@
     <math-field onchange="handleChange(event,this)">x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}</math-field>
     <math-field style="width:400px;" default-mode="text" onchange="handleChange(event,this)"> </math-field>
     <math-field style="width:400px;" default-mode="text" class="nobutton" onchange="handleChange(event,this)"> </math-field>
-    <math-field id="mf" style="width:400px;" class="nobutton" onchange="handleChange(event,this)"> </math-field>    
+    <math-field id="mf" style="width:400px;" class="nobutton" onchange="handleChange(event,this)"> </math-field>
+    <br/>
+    <hr/>
+    <math-field id="of" read-only style="display:inline-block"></math-field>
   </body>
 </html>
