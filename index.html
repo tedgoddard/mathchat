@@ -2,10 +2,15 @@
 <html>
   <head>
     <script defer src="//unpkg.com/mathlive"></script>
+    <style>
+      .nobutton::part(virtual-keyboard-toggle) {
+        display: none;
+       }
+    </style>
   </head>
   <body>
     <math-field default-mode="text">x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}</math-field>
     <math-field style="width:400px;" default-mode="text"> </math-field>
-    <math-field style="width:400px;" default-mode="text" virtual-keyboard-mode="manual"> </math-field>    
+    <math-field style="width:400px;" default-mode="text" class="nobutton"> </math-field>    
   </body>
 </html>
