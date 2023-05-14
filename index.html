@@ -2,13 +2,14 @@
 <html>
   <head>
     <script defer src="//unpkg.com/mathlive"></script>
-    <script defer src="//unpkg.com/@cortex-js/compute-engine"></script>
     <style>
       .nobutton::part(virtual-keyboard-toggle) {
         display: none;
        }
     </style>
     <script>
+      import "https://unpkg.com/@cortex-js/compute-engine?module"
+
       function handleChange(event, field) {
         console.log(field.value)
         console.log(field.getValue("math-json"))
