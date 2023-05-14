@@ -7,10 +7,15 @@
         display: none;
        }
     </style>
+    <script>
+      function handleChange(event, field) {
+        console.log(event, field)
+      }
+    </script>
   </head>
   <body>
     <math-field default-mode="text">x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}</math-field>
     <math-field style="width:400px;" default-mode="text"> </math-field>
-    <math-field style="width:400px;" default-mode="text" class="nobutton"> </math-field>    
+    <math-field style="width:400px;" default-mode="text" class="nobutton" onchange="handleChange(event,this)"> </math-field>    
   </body>
 </html>
