@@ -10,7 +10,7 @@
     <script type="module">
       import { ComputeEngine } from 'https://unpkg.com/@cortex-js/compute-engine?module'
 
-      function handleChange(event, field) {
+      export function handleChange(event, field) {
         console.log(field.value)
         console.log(field.getValue("math-json"))
       }
