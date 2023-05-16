@@ -8,10 +8,25 @@
        }
     </style>
     <script type="module">
+      function extractText(latex) {
+        const parts = []
+        while (const matches = latex.match(/^(.*)\\text{([^{}]*)}(.*)$/)) {
+          parts.push('$' + matches[1] + '$', matches[2])
+          latex = matches[3]
+        }
+        if (latex) {
+          parts.push(latex)
+        }
+        console.log({parts})
+        return parts.join(' ')
+      }
+
       function handleChange(event, field) {
+        const latex = field.value
         console.log(field.value)
         console.log(field.getValue("ascii-math"))
         document.getElementById("of").setValue(field.getValue("latex"))
+        console.log(extractText(latex))
       }
 
       window.handleChange = handleChange
