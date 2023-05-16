@@ -16,7 +16,7 @@
           latex = matches[3]
         }
         if (latex) {
-          parts.push(latex)
+          parts.push('$' + latex + '$')
         }
         console.log({parts})
         return parts.join(' ')
@@ -27,6 +27,9 @@
         console.log(field.value)
         console.log(field.getValue("ascii-math"))
         document.getElementById("of").setValue(field.getValue("latex"))
+        const dof = document.getElementById("dof")
+        dof.innerText = extractText(latex)
+        renderMathInElement(dof)
         console.log(extractText(latex))
       }
 
@@ -41,5 +44,6 @@
     <br/>
     <hr/>
     <math-field id="of" read-only style="display:inline-block"></math-field>
+    <div id="dof"></div>
   </body>
 </html>
