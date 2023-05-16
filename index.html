@@ -29,7 +29,7 @@
         document.getElementById("of").setValue(field.getValue("latex"))
         const dof = document.getElementById("dof")
         dof.innerText = extractText(latex)
-        renderMathInElement(dof)
+        MathLive.renderMathInElement(dof)
         console.log(extractText(latex))
       }
 
