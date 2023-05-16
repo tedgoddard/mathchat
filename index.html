@@ -12,11 +12,11 @@
         const parts = []
         let matches = null
         while (matches = latex.match(/^(.*)\\text{([^{}]*)}(.*)$/)) {
-          parts.push('$' + matches[1] + '$', matches[2])
+          parts.push('\\(' + matches[1] + '\\)', matches[2])
           latex = matches[3]
         }
         if (latex) {
-          parts.push('$' + latex + '$')
+          parts.push('\\(' + latex + '\\)')
         }
         console.log({parts})
         return parts.join(' ')
