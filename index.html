@@ -10,7 +10,8 @@
     <script type="module">
       function extractText(latex) {
         const parts = []
-        while (const matches = latex.match(/^(.*)\\text{([^{}]*)}(.*)$/)) {
+        let matches = null
+        while (matches = latex.match(/^(.*)\\text{([^{}]*)}(.*)$/)) {
           parts.push('$' + matches[1] + '$', matches[2])
           latex = matches[3]
         }
