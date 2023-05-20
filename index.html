@@ -36,6 +36,9 @@
       function handleBeforeInput(event, field) {
         if (event.inputType === 'insertFromPaste') {
           console.log("PASTE", event)
+          navigator.clipboard.readText().then(text => {
+            console.log(text)
+          })
 //           field.executeCommand("moveToNextPlaceholder")
           event.preventDefault()
         }
