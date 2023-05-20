@@ -32,6 +32,14 @@
         MathLive.renderMathInElement(dof)
         console.log(extractText(latex))
       }
+      
+      function handleBeforeInput(event, field) {
+        if (ev.inputType === 'insertFromPaste') {
+          console.log("PASTE", event)
+//           mf.executeCommand("moveToNextPlaceholder")
+          ev.preventDefault()
+        }
+      })
 
       window.handleChange = handleChange
     </script>
@@ -40,7 +48,7 @@
     <math-field onchange="handleChange(event,this)">x=\frac{-b\pm \sqrt{b^2-4ac}}{2a}</math-field>
     <math-field style="width:400px;" default-mode="text" onchange="handleChange(event,this)"> </math-field>
     <math-field style="width:400px;" default-mode="text" class="nobutton" onchange="handleChange(event,this)"> </math-field>
-    <math-field id="mf" style="width:400px;" class="nobutton" onchange="handleChange(event,this)"> </math-field>
+    <math-field id="mf" style="width:400px;" class="nobutton" onchange="handleChange(event,this)" onbeforeinput="handleBeforeInput(event,this)"> </math-field>
     <br/>
     <hr/>
     <math-field id="of" read-only style="display:inline-block"></math-field>
