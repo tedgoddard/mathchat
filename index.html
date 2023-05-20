@@ -34,10 +34,10 @@
       }
       
       function handleBeforeInput(event, field) {
-        if (ev.inputType === 'insertFromPaste') {
+        if (event.inputType === 'insertFromPaste') {
           console.log("PASTE", event)
-//           mf.executeCommand("moveToNextPlaceholder")
-          ev.preventDefault()
+//           field.executeCommand("moveToNextPlaceholder")
+          event.preventDefault()
         }
       }
 
