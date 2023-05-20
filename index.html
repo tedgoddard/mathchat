@@ -38,6 +38,8 @@
           console.log("PASTE", event)
           navigator.clipboard.readText().then(text => {
             console.log(text)
+            field.executeCommand(['insert', text]);
+
           })
 //           field.executeCommand("moveToNextPlaceholder")
           event.preventDefault()
