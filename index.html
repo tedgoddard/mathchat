@@ -39,7 +39,7 @@
           navigator.clipboard.readText().then(text => {
             console.log(text)
             // field.executeCommand(["switchMode", "text"])
-            field.executeCommand(['insert', '"' + text]);
+            field.executeCommand(['insert',  `\\text{${text}}`]);
 
           })
 //           field.executeCommand("moveToNextPlaceholder")
